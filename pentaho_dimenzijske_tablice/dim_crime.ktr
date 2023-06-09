@@ -611,7 +611,41 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>368</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Merge join 3</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>Merge join 4</step1>
+    <step2>offense_sk</step2>
+    <keys_1>
+      <key>id</key>
+    </keys_1>
+    <keys_2>
+      <key>id</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -645,7 +679,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>544</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -664,19 +698,15 @@
     <fields>
       <field>
         <name>id</name>
-        <rename/>
       </field>
       <field>
         <name>location_sk</name>
-        <rename/>
       </field>
       <field>
         <name>police_station_sk</name>
-        <rename/>
       </field>
       <field>
         <name>shooting_sk</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -689,7 +719,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>464</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -708,31 +738,24 @@
     <fields>
       <field>
         <name>id</name>
-        <rename/>
       </field>
       <field>
         <name>crime_description</name>
-        <rename/>
       </field>
       <field>
         <name>location_sk</name>
-        <rename/>
       </field>
       <field>
         <name>offense_sk</name>
-        <rename/>
       </field>
       <field>
         <name>time_sk</name>
-        <rename/>
       </field>
       <field>
         <name>police_station_sk</name>
-        <rename/>
       </field>
       <field>
         <name>shooting_sk</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -745,7 +768,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>704</xloc>
+      <xloc>736</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -817,7 +840,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
+      <xloc>832</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -992,7 +1015,7 @@ AND dimof.code_group = o.code_group;</sql>
     </remotesteps>
     <GUI>
       <xloc>640</xloc>
-      <yloc>336</yloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1014,7 +1037,7 @@ FROM crimes.crime c,
      crimes.location l,
      crimes.police_station p,
      crimes.district d
-RIGHT JOIN crimes_dimenzije.dim_police_station dp
+INNER JOIN crimes_dimenzije.dim_police_station dp
 ON dp.district = d.name
 WHERE c.offense_fk = o.id
 AND  c.location_fk = l.id
@@ -1278,42 +1301,8 @@ ORDER BY c.id;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Merge join 3</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>Merge join 4</step1>
-    <step2>offense_sk</step2>
-    <keys_1>
-      <key>id</key>
-    </keys_1>
-    <keys_2>
-      <key>id</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>640</xloc>
-      <yloc>256</yloc>
+      <xloc>544</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
